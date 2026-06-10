@@ -1,0 +1,4 @@
+apiVersion: v1
+name: sample-app
+version: 1.0.0
+description: Example legacy Helm v1 chart
