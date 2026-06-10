@@ -45,6 +45,19 @@ python3 -m venv .venv
 .venv/bin/python convert.py convert /tmp/chart-v2 --target v3 --in-place
 ```
 
+## Publish to GitHub
+
+```bash
+# One-time: authenticate (browser or token)
+gh auth login
+# or: export GH_TOKEN=<personal-access-token>
+
+# Create public repo and push
+./scripts/publish-to-github.sh
+```
+
+Optional environment variables: `REPO_NAME` (default: `helm-chart-convert`), `VISIBILITY` (`public` or `private`).
+
 ## Notes
 
 Helm 4 breaking changes are mostly CLI and plugin related (post-renderers, renamed flags), not chart structure. Always validate with `helm lint` and `helm template` under Helm 4.
